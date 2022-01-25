@@ -1,21 +1,31 @@
 export const state = () => ({
   customers: [],
   projects: [],
+  feedbacks: [],
 })
 
 export const actions = {
-  async getCustomers({ commit, state }, _) {
+  async getCustomers({commit, state}, _) {
     if (!state.customers.length) {
-      const { data } = await this.$axios.get('customers')
+      const {data} = await this.$axios.get('customers')
       commit('SET_LIST', {
         field: 'customers',
         data,
       })
     }
   },
-  async getProjects({ commit, state }, _) {
+  async getFeedbacks({commit, state}, _) {
+    if (!state.feedbacks.length) {
+      const {data} = await this.$axios.get('feedbacks')
+      commit('SET_LIST', {
+        field: 'feedbacks',
+        data,
+      })
+    }
+  },
+  async getProjects({commit, state}, _) {
     if (!state.projects.length) {
-      const { data } = await this.$axios.get('projects')
+      const {data} = await this.$axios.get('projects')
       commit('SET_LIST', {
         field: 'projects',
         data,
@@ -25,7 +35,7 @@ export const actions = {
 }
 
 export const mutations = {
-  SET_LIST(state, { field, data }) {
+  SET_LIST(state, {field, data}) {
     state[field] = data
   },
 }

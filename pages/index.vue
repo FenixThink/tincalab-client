@@ -76,21 +76,18 @@
         </div>
       </section>
       <section
-        class="flex flex-col justify-center items-center mt-20 container__"
+        class="flex flex-col justify-center items-center my-20 container__"
       >
         <h2 class="title__h2">Lo que nuestros clientes piensan</h2>
         <p class="text-2xl mt-3">
           Esto es lo que nuestro clientes y quienes conocen nuestro trabajo
           piensan de nosotros
         </p>
-        <div>
+        <div class="relative w-full h-full">
           <no-ssr>
             <carousel :scrollPerPage="true" :perPageCustom="[[480, 1], [768, 1]]" :autoplay="true">
-              <slide>
-                1
-              </slide>
-              <slide>
-                2
+              <slide v-for="(feedback, i) in feedbacks" :key="i">
+                <FeedbackCard class="mt-5" :style="{'height': '35rem'}" :customer="feedback"/>
               </slide>
             </carousel>
           </no-ssr>
@@ -113,9 +110,13 @@ export default {
     projects() {
       return this.$store.state.projects
     },
+    feedbacks() {
+      return this.$store.state.feedbacks
+    },
   },
   async mounted() {
     await this.$store.dispatch('getCustomers')
+    await this.$store.dispatch('getFeedbacks')
     await this.$store.dispatch('getProjects')
     this.loading = !this.loading
   },
