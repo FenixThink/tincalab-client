@@ -4,6 +4,23 @@
   padding: 0;
 }
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  @variants responsive {
+    .masonry {
+      column-gap: 1em;
+      column-count: 3;
+    }
+
+    .break-inside {
+      break-inside: avoid;
+    }
+  }
+}
+
 body {
   font-family: 'Montserrat', sans-serif;
 }
@@ -12,20 +29,67 @@ html {
   font-size: 64.5%;
 }
 
-.container__ {
-  padding-left: 20% !important;
-  padding-right: 20% !important;
+@media screen and (max-width: 480px) {
+  .container__ {
+    padding-left: 3% !important;
+    padding-right: 3% !important;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .container__ {
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 767px) {
+  .container__ {
+    padding-left: 10% !important;
+    padding-right: 10% !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .container__ {
+    padding-left: 15% !important;
+    padding-right: 15% !important;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .container__ {
+    padding-left: 10% !important;
+    padding-right: 10% !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container__ {
+    padding-left: 15% !important;
+    padding-right: 15% !important;
+  }
 }
 
 .bg-blur {
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 14.06%, rgba(255, 255, 255, 0.8) 85.42%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.8) 14.06%,
+    rgba(255, 255, 255, 0.8) 85.42%,
+    rgba(255, 255, 255, 0) 100%
+  );
   backdrop-filter: blur(111px);
 }
 
 .title__h1 {
   font-size: 5.25rem;
   font-weight: bold;
-  background: -webkit-linear-gradient(93.35deg, #B983DE -2.66%, #5991F7 105.06%);
+  background: -webkit-linear-gradient(
+    93.35deg,
+    #b983de -2.66%,
+    #5991f7 105.06%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: tomato;
@@ -40,10 +104,16 @@ html {
 }
 
 .title__h3 {
-  font-size: 1.6rem;
+  font-size: 2.6rem;
   font-weight: 600;
+  color: #5d90f6;
 }
 
+.line__element {
+  background: url('~/static/line.svg');
+  width: 100%;
+  height: 1.5px;
+}
 
 .default-bg-gray {
   background: #f5f5f5;
@@ -79,7 +149,6 @@ html {
   color: white !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
 }
 
 .slick-dots li.slick-active button:before {

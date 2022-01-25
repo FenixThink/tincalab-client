@@ -2,13 +2,13 @@
   <div>
     <div class="flex flex-col h-screen wrap relative">
       <header>
-        <Navigation class="fixed w-full"/>
+        <Navigation class="fixed w-full" />
       </header>
       <main class="flex-grow relative">
-        <Nuxt class="relative mt-24"/>
+        <Nuxt class="relative mt-24" />
       </main>
       <footer>
-        <Footer/>
+        <Footer />
       </footer>
     </div>
   </div>
@@ -16,6 +16,6 @@
 
 <script>
 export default {
-  name: "SlimLayout"
+  name: 'SlimLayout',
 }
 </script>

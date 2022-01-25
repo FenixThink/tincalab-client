@@ -1,14 +1,17 @@
 export default {
+  ssr: true,
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Tinca Lab - Tinca Desarrollo - Tinca Software - Tinca Diseño - Prototipado ',
+    title:
+      'Tinca Lab - Tinca Desarrollo - Tinca Software - Tinca Diseño - Prototipado ',
     meta: [
       {charset: 'utf-8'},
       {name: 'viewport', content: 'width=device-width, initial-scale=1'},
       {
         hid: 'description',
         name: 'description',
-        content: 'Somos Tinca Lab, un colectivo empresarial que se dedica a potenciar marcas y ayudarlas en su transicion a la era digital. Con herramientas como diseño de servicios, desarrollo de software y marketing digital daremos todo para que tu compañia se conocida en la red.'
+        content:
+          'Somos Tinca Lab, un colectivo empresarial que se dedica a potenciar marcas y ayudarlas en su transicion a la era digital. Con herramientas como diseño de servicios, desarrollo de software y marketing digital daremos todo para que tu compañia se conocida en la red.',
       },
       {name: 'format-detection', content: 'telephone=no'},
     ],
@@ -16,12 +19,14 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-    '@/assets/css/main.css'
-  ],
+  css: ['@/assets/css/main.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [
+    {
+      src: "~/plugins/main.js", mode: "client"
+    }
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -33,7 +38,7 @@ export default {
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
     // https://google-fonts.nuxtjs.org/setup
-    '@nuxtjs/google-fonts'
+    '@nuxtjs/google-fonts',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -65,4 +70,9 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+
+  server: {
+    host: '0.0.0.0',
+    port: 3000, // default: 3000
+  },
 }

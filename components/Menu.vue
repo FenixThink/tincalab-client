@@ -16,7 +16,6 @@
 </template>
 
 <script>
-
 export default {
   name: 'MenuComponent',
   data: () => ({
@@ -36,7 +35,7 @@ export default {
       },
       {
         path: '#blog',
-        name: 'Blog'
+        name: 'Blog',
       },
       {
         path: '/#contacto',
@@ -56,7 +55,11 @@ export default {
 .active {
   font-size: 1.5rem;
   font-weight: 800;
-  background: -webkit-linear-gradient(93.35deg, #B983DE -2.66%, #5991F7 105.06%);
+  background: -webkit-linear-gradient(
+    93.35deg,
+    #b983de -2.66%,
+    #5991f7 105.06%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: tomato;
@@ -64,6 +67,6 @@ export default {
 
 .route-link:hover {
   transform: scale(1.05) !important;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 </style>
