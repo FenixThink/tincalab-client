@@ -1,8 +1,7 @@
 <template>
   <button
     class="btn py-3 text-white font-bold text-2xl cursor-pointer"
-    @click="to(route)"
-  >
+    @click="to(route)">
     {{ title }}
   </button>
 </template>

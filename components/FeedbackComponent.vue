@@ -1,21 +1,21 @@
 <template>
   <div class="flex grid sm:grid-cols-1 lg:grid-cols-2">
     <div class="h-full flex justify-center">
-      <img class="border-purple-500 absolute w-1/4" :src="'https://api.tincalab.com'+customer.image.url"
-           :alt="customer.name">
+      <img :alt="feedback.name" :src="'https://api.tincalab.com'+feedback.image.url"
+           class="border-purple-500 absolute w-1/4">
     </div>
-    <div>
+    <div class="flex flex-col items-start">
       <div class="quotes"/>
-      <section class="w-full">
+      <section class="flex flex-col items-start justify-center">
         <h2 class="text-5xl font-semibold title__h1">
-          {{ customer.name }}
+          {{ feedback.name }}
         </h2>
-        <article class="text-3xl font-light my-3 text-gray-500">
+        <article class="text-2xl font-light my-3 text-gray-500">
           <p>
-            {{ customer.description }}
+            {{ feedback.description }}
           </p>
         </article>
-        <p class="uppercase text-gray-500">{{ formatDate(customer.date) }}</p>
+        <p class="uppercase text-gray-500">{{ formatDate(feedback.date) }}</p>
       </section>
     </div>
   </div>
@@ -26,9 +26,9 @@ import moment from 'moment';
 import 'moment/locale/es';
 
 export default {
-  name: "FeedbackCard",
+  name: "FeedbackComponent",
   props: {
-    customer: {
+    feedback: {
       type: Object,
       default: () => ({})
     }

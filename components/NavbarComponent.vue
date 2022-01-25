@@ -25,7 +25,7 @@
             </nuxt-link>
           </div>
           <div class="navbar__menu">
-            <Menu />
+            <MenuComponentChild/>
           </div>
         </div>
         <div class="sign__menu flex items-center justify-center">
@@ -86,7 +86,7 @@
         </div>
       </div>
       <div v-show="opened" class="bg-white">
-        <Menu :class="{ 'flex-col': true }" @change-state="toggle" />
+        <MenuComponentChild :class="{ 'flex-col': true }" @change-state="toggle"/>
       </div>
     </div>
   </nav>
@@ -107,7 +107,8 @@ export default {
     computedHeight: '130px',
     opened: false,
   }),
-  mounted() {},
+  mounted() {
+  },
   methods: {
     toggle() {
       this.opened = !this.opened

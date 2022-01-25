@@ -37,9 +37,42 @@ export default {
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
-    // https://google-fonts.nuxtjs.org/setup
+    // https://google-fonts.nuxtjs.org/
     '@nuxtjs/google-fonts',
+    // https://i18n.nuxtjs.org/
+    '@nuxtjs/i18n',
   ],
+
+  i18n: {
+    parsePages: false,
+    locales: ['en', 'es'],
+    defaultLocale: 'es',
+    vueI18n: {
+      fallbackLocale: 'es',
+      messages: {
+        en: {
+          welcome: 'Welcome'
+        },
+        es: {
+          welcome: 'Bienvenido'
+        }
+      }
+    },
+    pages: {
+      services: {
+        en: '/en/services',
+        es: '/servicios',
+      },
+      'blog/index': {
+        en: '/en/blog',
+        es: '/blog',
+      },
+      'blog/_blog': {
+        en: '/en/blog/:blog',
+        es: '/en/blog/:blog'
+      },
+    }
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [

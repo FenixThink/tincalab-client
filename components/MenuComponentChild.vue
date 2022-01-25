@@ -26,19 +26,19 @@ export default {
         exact: true,
       },
       {
-        path: '#servicios',
+        path: '/servicios',
         name: 'Servicios',
       },
       {
-        path: '/#proyectos',
+        path: '/proyectos',
         name: 'Proyectos',
       },
       {
-        path: '#blog',
+        path: '/blog',
         name: 'Blog',
       },
       {
-        path: '/#contacto',
+        path: '/contacto',
         name: 'Contácto',
       },
     ],

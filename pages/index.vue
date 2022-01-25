@@ -1,9 +1,18 @@
 <template>
   <div>
-    <div v-if="loading" class="h-screen  flex justify-center items-center">
+    <div v-if="loading" class="h-screen flex justify-center items-center">
       <Loading/>
     </div>
-    <div v-if="!loading" class="home">
+    <div v-if="!loading" class="relative">
+      <div class="bg-white rounded-2xl inline-block p-5 fixed m-5">
+        <nuxt-link :to="localePath('/', 'es')">
+          <div class="latam__locale"/>
+        </nuxt-link>
+        <hr class="my-1">
+        <nuxt-link :to="localePath('/', 'en')">
+          <div class="english__locale"/>
+        </nuxt-link>
+      </div>
       <section>
         <div class="grid grid-cols-1">
           <figure
@@ -23,7 +32,7 @@
                 debilidades de tu empresa y como podemos convertirlas en
                 fortalezas.
               </p>
-              <ButtonCustom route="contactanos" title="Contactanos"/>
+              <ButtonComponent route="contactanos" title="Contactanos"/>
             </article>
             <figure
               class="hidden sm:hidden md:hidden lg:flex relative flex-col items-center justify-center"
@@ -42,7 +51,7 @@
           <div class="line__element w-full"/>
           <div class="flex flex-row justify-center items-center my-5">
             <div v-for="(customer, i) in customers" :key="i">
-              <Customers class="px-2 lg:mx-20 w-full" :customer="customer"/>
+              <CustomersComponent :customer="customer" class="px-2 lg:mx-20 w-full"/>
             </div>
           </div>
           <div class="line__element w-full"/>
@@ -87,7 +96,7 @@
           <no-ssr>
             <carousel :scrollPerPage="true" :perPageCustom="[[480, 1], [768, 1]]" :autoplay="true">
               <slide v-for="(feedback, i) in feedbacks" :key="i">
-                <FeedbackCard class="mt-5" :style="{'height': '35rem'}" :customer="feedback"/>
+                <FeedbackComponent :feedback="feedback" :style="{'height': '25rem'}" class="mt-5"/>
               </slide>
             </carousel>
           </no-ssr>
@@ -124,6 +133,20 @@ export default {
 </script>
 
 <style>
+.latam__locale {
+  background: url("~/static/latam-flag.svg") no-repeat center;
+  background-size: cover;
+  width: 30px;
+  height: 20px;
+}
+
+.english__locale {
+  background: url("~/static/english-flag.svg") no-repeat center;
+  background-size: cover;
+  width: 30px;
+  height: 20px;
+}
+
 .masonry__background {
   background: linear-gradient(
     137.73deg,
