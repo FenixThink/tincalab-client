@@ -138,8 +138,9 @@
           <BlogCardComponent/>
           <BlogCardComponent/>
         </div>
-        <nuxt-link class="blog__button text-2xl text-center text-white font-bold p-3 mt-3" :to="localePath('/blog')">
-          {{ $t('blogs_button') }}
+        <nuxt-link class="blog__button text-2xl text-center text-white font-bold py-3 px-4 my-3"
+                   :to="localePath('/blog')">
+          <p class="m-0">{{ $t('blogs_button') }}</p>
         </nuxt-link>
       </section>
     </div>
@@ -175,7 +176,13 @@ export default {
 <style>
 .blog__button {
   background: linear-gradient(112.77deg, #c381db 0%, #4e92f9 100%);
-  border-radius: 8px;
+  border-radius: 5px;
+  transition: all .2s ease;
+}
+
+.blog__button:hover {
+  transform: scale(1.1);
+  transition: all .2s ease-in-out;
 }
 
 .locale {
@@ -309,4 +316,5 @@ export default {
     height: 300px;
   }
 }
+
 </style>

@@ -25,7 +25,7 @@ export default {
 <style scoped>
 .btn {
   background: linear-gradient(112.77deg, #c381db 0%, #4e92f9 100%);
-  border-radius: 8px;
+  border-radius: 5px;
   width: 150px;
 }
 
