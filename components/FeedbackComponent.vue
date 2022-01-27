@@ -1,8 +1,8 @@
 <template>
   <div class="flex grid sm:grid-cols-1 lg:grid-cols-2">
-    <div class="h-full flex justify-center">
-      <img :alt="feedback.name" :src="'https://api.tincalab.com'+feedback.image.url"
-           class="border-purple-500 absolute w-1/4">
+    <div class="flex lg:justify-center">
+      <img width="300" :alt="feedback.name" :src="'https://api.tincalab.com'+feedback.image.url"
+           class="border-purple-500">
     </div>
     <div class="flex flex-col items-start">
       <div class="quotes"/>
@@ -23,7 +23,6 @@
 
 <script>
 import moment from 'moment';
-import 'moment/locale/es';
 
 export default {
   name: "FeedbackComponent",

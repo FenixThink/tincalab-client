@@ -1,12 +1,12 @@
 <template>
   <div>
-    
+    {{ this.$route.path }}
   </div>
 </template>
 
 <script>
 export default {
-  name: "ServicesPage"
+  name: "ContactPage"
 }
 </script>
 

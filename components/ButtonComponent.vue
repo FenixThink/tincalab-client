@@ -1,9 +1,9 @@
 <template>
-  <button
-    class="btn py-3 text-white font-bold text-2xl cursor-pointer"
-    @click="to(route)">
-    {{ title }}
-  </button>
+  <nuxt-link
+    :to="localePath(`${route}`)"
+    class="btn p-3 text-white font-bold text-2xl cursor-pointer">
+    <slot></slot>
+  </nuxt-link>
 </template>
 
 <script>
@@ -16,12 +16,8 @@ export default {
     },
     route: {
       type: String,
-    },
-  },
-  methods: {
-    to(route) {
-      this.$router.push('/' + route)
-    },
+      default: '/'
+    }
   },
 }
 </script>

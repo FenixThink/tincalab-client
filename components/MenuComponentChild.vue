@@ -1,48 +1,56 @@
 <template>
   <ul class="flex items-center">
-    <li v-for="(item, i) in menu" :key="i" class="mx-2 py-1">
+    <li class="mx-2 py-1">
       <nuxt-link
-        :href="item.path"
         class="route-link px-2 text-2xl"
-        :exact="item.exact"
+        :exact="true"
         active-class="active"
-        :to="item.path"
+        :to="localePath('/')"
         @click.native="changeState"
       >
-        {{ item.name }}
+        {{ $t('home') }}
+      </nuxt-link>
+      <nuxt-link
+        class="route-link px-2 text-2xl"
+        active-class="active"
+        :to="localePath('/servicios')"
+        @click.native="changeState"
+      >
+        {{ $t('services') }}
+      </nuxt-link>
+      <nuxt-link
+        class="route-link px-2 text-2xl"
+        active-class="active"
+        :to="localePath('/proyectos')"
+        @click.native="changeState"
+      >
+        {{ $t('projects') }}
+      </nuxt-link>
+      <nuxt-link
+        class="route-link px-2 text-2xl"
+        active-class="active"
+        :to="localePath('/blog')"
+        @click.native="changeState"
+      >
+        {{ $t('blog') }}
+      </nuxt-link>
+      <nuxt-link
+        class="route-link px-2 text-2xl"
+        active-class="active"
+        :to="localePath('/contacto')"
+        @click.native="changeState"
+      >
+        {{ $t('contact') }}
       </nuxt-link>
     </li>
   </ul>
 </template>
 
 <script>
+
 export default {
-  name: 'MenuComponent',
-  data: () => ({
-    menu: [
-      {
-        path: '/',
-        name: 'Inicio',
-        exact: true,
-      },
-      {
-        path: '/servicios',
-        name: 'Servicios',
-      },
-      {
-        path: '/proyectos',
-        name: 'Proyectos',
-      },
-      {
-        path: '/blog',
-        name: 'Blog',
-      },
-      {
-        path: '/contacto',
-        name: 'Contácto',
-      },
-    ],
-  }),
+  name: 'MenuComponentChild',
+  data: () => ({}),
   methods: {
     changeState() {
       this.$emit('change-state')

@@ -1,3 +1,15 @@
+<i18n>
+{
+  "en": {
+    "sign_in": "Log In",
+    "sign_up": "Sign Up"
+  },
+  "es": {
+    "sign_in": "Iniciar sesion",
+    "sign_up": "Registrarse"
+  }
+}
+</i18n>
 <template>
   <nav>
     <v-style>
@@ -9,7 +21,7 @@
       <div class="container__ py-5 bg-blur flex items-center justify-between">
         <div class="navbar flex items-center">
           <div class="navbar__brand flex items-center justify-center">
-            <nuxt-link to="/" class="mr-5">
+            <nuxt-link :to="localePath('/')" class="mr-5">
               <svg
                 width="98"
                 height="30"
@@ -30,12 +42,12 @@
         </div>
         <div class="sign__menu flex items-center justify-center">
           <button class="mr-2">
-            <span class="text-blue-500 text-2xl font-bold">Log In</span>
+            <span class="text-blue-500 text-2xl font-bold">{{ $t('sign_in') }}</span>
           </button>
           <button
             class="bg-white ml-2 sign__menu--button rounded-xl px-5 py-2 text-2xl font-bold"
           >
-            <span>Sign Up</span>
+            <span>{{ $t('sign_up') }}</span>
           </button>
         </div>
       </div>
