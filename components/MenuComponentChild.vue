@@ -10,6 +10,8 @@
       >
         Incio
       </nuxt-link>
+    </li>
+    <li class="mx-2 py-1">
       <nuxt-link
         class="route-link px-2 text-2xl"
         active-class="active"
@@ -18,6 +20,8 @@
       >
         Servicios
       </nuxt-link>
+    </li>
+    <li class="mx-2 py-1">
       <nuxt-link
         class="route-link px-2 text-2xl"
         active-class="active"
@@ -26,6 +30,8 @@
       >
         Blog
       </nuxt-link>
+    </li>
+    <li class="mx-2 py-1">
       <nuxt-link
         class="route-link px-2 text-2xl"
         active-class="active"
