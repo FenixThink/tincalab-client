@@ -10,7 +10,7 @@
             <nuxt-link class="text-2xl text-indigo-100 mx-3 font-semibold" to="/servicios">
               Servicios
             </nuxt-link>
-            <nuxt-link class="text-2xl text-indigo-100 mx-3 font-semibold" to="/contacto'">
+            <nuxt-link class="text-2xl text-indigo-100 mx-3 font-semibold" to="/contacto">
               Contacto
             </nuxt-link>
             <nuxt-link class="text-2xl text-indigo-100 mx-3 font-semibold" to="/blog">
