@@ -1,15 +1,13 @@
 <template>
-  <div>
+  <div class="default">
     <div class="flex flex-col h-screen wrap relative">
       <header>
-        <NavbarComponent class="fixed w-full"/>
+        <NavbarComponent/>
       </header>
-      <main class="flex-grow relative">
-        <Nuxt class="relative mt-24"/>
+      <main class="flex-grow bg-white lg:pt-20 relative">
+        <Nuxt class="relative"/>
       </main>
-      <footer>
-        <FooterComponent class="z-50"/>
-      </footer>
+      <FooterComponent class="z-50"/>
     </div>
   </div>
 </template>
@@ -19,3 +17,12 @@ export default {
   name: 'SlimLayout',
 }
 </script>
+
+<style lang="css">
+main {
+  background-image: url('~/static/bg-elemtents.png');
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+}
+</style>

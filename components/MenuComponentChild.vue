@@ -5,42 +5,34 @@
         class="route-link px-2 text-2xl"
         :exact="true"
         active-class="active"
-        :to="localePath('/')"
+        to="/"
         @click.native="changeState"
       >
-        {{ $t('home') }}
+        Incio
       </nuxt-link>
       <nuxt-link
         class="route-link px-2 text-2xl"
         active-class="active"
-        :to="localePath('/servicios')"
+        to="/servicios"
         @click.native="changeState"
       >
-        {{ $t('services') }}
+        Servicios
       </nuxt-link>
       <nuxt-link
         class="route-link px-2 text-2xl"
         active-class="active"
-        :to="localePath('/proyectos')"
+        to="/blog"
         @click.native="changeState"
       >
-        {{ $t('projects') }}
+        Blog
       </nuxt-link>
       <nuxt-link
         class="route-link px-2 text-2xl"
         active-class="active"
-        :to="localePath('/blog')"
+        to="/contacto"
         @click.native="changeState"
       >
-        {{ $t('blog') }}
-      </nuxt-link>
-      <nuxt-link
-        class="route-link px-2 text-2xl"
-        active-class="active"
-        :to="localePath('/contacto')"
-        @click.native="changeState"
-      >
-        {{ $t('contact') }}
+        Contacto
       </nuxt-link>
     </li>
   </ul>

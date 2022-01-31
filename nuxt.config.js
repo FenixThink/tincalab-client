@@ -22,67 +22,14 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [// https://go.nuxtjs.dev/eslint
-    '@nuxtjs/eslint-module', // https://go.nuxtjs.dev/tailwindcss
-    '@nuxtjs/tailwindcss', // https://google-fonts.nuxtjs.org/
-    '@nuxtjs/google-fonts', // https://i18n.nuxtjs.org/
-    '@nuxtjs/i18n',],
-
-  i18n: {
-    detectBrowserLanguage: {
-      useCookie: true, cookieKey: 'i18n_redirected', redirectOn: 'root',  // recommended
-    },
-    parsePages: false,
-    vueI18nLoader: true,
-    locales: [
-      {
-        code: 'en',
-        iso: 'en-US',
-        file: 'en.js'
-      },
-      {
-        code: 'es',
-        iso: 'es-MX',
-        file: 'es.js'
-      },
-    ],
-    lazy: true,
-    langDir: 'lang/',
-    defaultLocale: 'es',
-    vueI18n: {
-      fallbackLocale: 'es',
-      messages: {
-        en: {
-          welcome: 'Welcome'
-        },
-        es: {
-          welcome: 'Bienvenido'
-        }
-      }
-    },
-    pages: {
-      servicios: {
-        en: '/services',
-        es: '/servicios',
-      },
-      proyectos: {
-        en: '/projects',
-        es: '/proyectos'
-      },
-      contacto: {
-        en: '/contact-us',
-        es: '/contacto'
-      },
-      'blog/index': {
-        en: '/blog',
-        es: '/blog',
-      },
-      'blog/_blog': {
-        en: '/blog/:blog',
-        es: '/blog/:blog'
-      },
-    }
-  },
+  buildModules: [
+    // https://go.nuxtjs.dev/eslint
+    '@nuxtjs/eslint-module',
+    // https://go.nuxtjs.dev/tailwindcss/
+    '@nuxtjs/tailwindcss',
+    // https://google-fonts.nuxtjs.org/
+    '@nuxtjs/google-fonts',
+  ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [// https://go.nuxtjs.dev/axios
@@ -91,7 +38,7 @@ export default {
 
   googleFonts: {
     families: {
-      Montserrat: [200, 300, 400, 500, 600, 700, 800],
+      Poppins: [200, 300, 400, 500, 600, 700, 800],
     },
   },
 

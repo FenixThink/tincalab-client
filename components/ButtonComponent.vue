@@ -1,6 +1,6 @@
 <template>
   <nuxt-link
-    :to="localePath(`${route}`)"
+    :to="`${route}`"
     class="btn p-3 text-white font-bold text-2xl cursor-pointer">
     <slot></slot>
   </nuxt-link>

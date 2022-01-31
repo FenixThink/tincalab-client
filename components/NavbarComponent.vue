@@ -1,15 +1,3 @@
-<i18n>
-{
-  "en": {
-    "sign_in": "Log In",
-    "sign_up": "Sign Up"
-  },
-  "es": {
-    "sign_in": "Iniciar sesion",
-    "sign_up": "Registrarse"
-  }
-}
-</i18n>
 <template>
   <nav>
     <v-style>
@@ -18,10 +6,10 @@
     <div
       class="lg:block sm:hidden md:hidden hidden desktop drop-shadow-md fixed w-full z-50"
     >
-      <div class="container__ py-5 bg-blur flex items-center justify-between">
-        <div class="navbar flex items-center">
-          <div class="navbar__brand flex items-center justify-center">
-            <nuxt-link :to="localePath('/')" class="mr-5">
+      <div class="container__ py-5 bg-blur">
+        <div class="navbar flex items-center justify-between">
+          <div class="navbar__brand flex items-center">
+            <nuxt-link to="/" class="mr-5">
               <svg
                 width="98"
                 height="30"
@@ -39,16 +27,6 @@
           <div class="navbar__menu">
             <MenuComponentChild/>
           </div>
-        </div>
-        <div class="sign__menu flex items-center justify-center">
-          <button class="mr-2">
-            <span class="text-blue-500 text-2xl font-bold">{{ $t('sign_in') }}</span>
-          </button>
-          <button
-            class="bg-white ml-2 sign__menu--button rounded-xl px-5 py-2 text-2xl font-bold"
-          >
-            <span>{{ $t('sign_up') }}</span>
-          </button>
         </div>
       </div>
     </div>
@@ -138,17 +116,5 @@ export default {
 .smooth-enter,
 .smooth-leave-to {
   height: 0;
-}
-
-.sign__menu--button {
-  box-shadow: 0px 7px 20px rgba(49, 69, 255, 0.13) !important;
-  background: -webkit-linear-gradient(
-    93.35deg,
-    #b983de -2.66%,
-    #5991f7 105.06%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: tomato;
 }
 </style>
