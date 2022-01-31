@@ -1,15 +1,13 @@
 <template>
   <div>
-    {{ this.$route.path }}
+    {{ $route.path }}
   </div>
 </template>
 
 <script>
 export default {
-  name: "IndexBlogPage"
+  name: 'IndexBlogPage',
 }
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
