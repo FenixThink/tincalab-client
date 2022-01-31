@@ -1,4 +1,7 @@
+import axios from 'axios';
+
 export default {
+  target: 'static',
   ssr: true, // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Tinca Lab - Tinca Desarrollo - Tinca Software - Tinca Diseño - Prototipado ',
@@ -29,7 +32,21 @@ export default {
     '@nuxtjs/tailwindcss',
     // https://google-fonts.nuxtjs.org/
     '@nuxtjs/google-fonts',
+    // https://sitemap.nuxtjs.org/
+    '@nuxtjs/sitemap'
   ],
+
+  sitemap: {
+    hostname: 'https://www.tincalab.com',
+    path: '/sitemap.xml',
+    cacheTime: 1000 * 60 * 60 * 2,
+    exclude: ['/404'],
+    routes: async () => {
+      const apiUrl = 'https://api.tincalab.com/blogs'
+      const {data} = await axios.get(apiUrl)
+      return data.map(v => `/blog/${v.hash}`)
+    },
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [// https://go.nuxtjs.dev/axios
