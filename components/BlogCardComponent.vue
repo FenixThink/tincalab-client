@@ -9,11 +9,13 @@
       <hr class="text-gray-300 bg-gray-300 my-1">
       <nuxt-link
         :to="'/blog/' + blog.hash" class="title__h2 cursor-pointer"
-                 style="font-size: 2rem !important;line-height: 15px">
+        style="font-size: 2rem !important;line-height: 15px !important;">
         {{ blog.title }}
       </nuxt-link>
       <div class="flex my-5">
-        <img :src="'https://api.tincalab.com'+blog.author_image.url" :alt="blog.author_name">
+        <img
+          width="40" class="rounded-full" :src="'https://api.tincalab.com'+blog.author_image.url"
+          :alt="blog.author_name">
         <div class="mx-2">
           <p class="flex-col ">
             {{ blog.author_name }}

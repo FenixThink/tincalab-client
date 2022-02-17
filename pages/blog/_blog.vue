@@ -10,14 +10,17 @@
           <p class="text-2xl my-3">{{ formatDate(blog.date).toUpperCase() }}</p>
           <figure class="blog__banner self-center">
             <img
-              class="w-screen rounded-2xl p-3" :src="'https://api.tincalab.com'+blog.banner.url"
-                 alt="Portada del blog"/>
+              class="w-auto h-1/3 rounded-3xl p-3" :src="'https://api.tincalab.com'+blog.banner.url"
+              alt="Portada del blog"/>
           </figure>
           <div class="flex items-center">
-            <img :src="'https://api.tincalab.com'+blog.author_image.url" :alt="blog.author_name">
+            <img
+              width="50" class="rounded-full" :src="'https://api.tincalab.com'+blog.author_image.url"
+              :alt="blog.author_name">
             <p class="t-regular mx-3">{{ blog.author_name }}</p>
           </div>
         </div>
+        <!-- eslint-disable vue/no-v-html -->
         <div
           style="color: #323232" class="blog__content break-word w-auto my-10 px-20 mx-auto t-regular"
           v-html="content">

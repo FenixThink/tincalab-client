@@ -8,7 +8,7 @@
         to="/"
         @click.native="changeState"
       >
-        Incio
+        Inicio
       </nuxt-link>
     </li>
     <li class="mx-2 py-1">

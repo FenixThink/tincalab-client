@@ -5,7 +5,7 @@
     </div>
     <div v-if="!loading" class="container__ flex flex-col items-center mt-20">
       <section class="flex flex-col items-center">
-        <h1 class="title__h2">
+        <h1 class="title__h2 text-center">
           ¿Que hacemos?
         </h1>
         <p class="text-2xl w-full container__ text-center mt-5">
@@ -15,7 +15,7 @@
         </p>
       </section>
       <section class="my-20">
-        <div class="grid lg:grid-cols-3">
+        <div class="grid md:grid-cols-3 lg:grid-cols-3">
           <div v-for="(service, i) in services" :key="i" class="my-2">
             <ServiceCardComponent :service="service"/>
           </div>

@@ -18,9 +18,9 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style scoped lang="css">
 main {
-  background-image: url('~/static/bg-elemtents.png');
+  background-image: url('~/static/bg-blogs.png') !important;
   background-repeat: no-repeat;
   background-position: top;
   background-size: cover;
