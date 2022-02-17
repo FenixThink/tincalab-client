@@ -21,7 +21,7 @@
             <a class="mx-2" target="_blank" href="https://facebook.com/tinca-lab">
               <img src="/facebook.svg" alt="Facebook">
             </a>
-            <a class="mx-2" target="_blank" href="https://facebook.com/tinca-lab">
+            <a class="mx-2" target="_blank" href="https://instagram.com/tincalab.col">
               <img src="/instagram.svg" alt="Instagram">
             </a>
             <a class="mx-2" target="_blank" href="https://facebook.com/tinca-lab">

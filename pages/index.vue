@@ -5,9 +5,9 @@
     </div>
     <div v-if="!loading" class="relative">
       <section>
-        <div class="grid grid-cols-1">
+        <div class="grid grid-cols-1 relative">
           <figure
-            class="relative lg:hidden flex flex-col items-center justify-center"
+            class="relative z-auto lg:hidden flex flex-col items-center justify-center"
           >
             <picture class="media absolute w-full"/>
             <picture class="media__background"/>
@@ -15,7 +15,7 @@
           <section
             class="container__ flex items-center grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2"
           >
-            <article>
+            <article class="relative">
               <h1 class="title__h1">Lleva tu empresa</h1>
               <h2 class="title__h2 block my-1">Al siguiente nivel</h2>
               <p class="text-3xl my-6 xl:pr-40">Escríbenos o llámanos para hablar de las necesidades y debilidades de tu
@@ -50,19 +50,19 @@
       <section
         class="flex flex-col justify-center items-center mt-20 container__"
       >
-        <h2 class="title__h2 text-black">Nuestros proyectos</h2>
+        <h2 class="title__h2 text-black text-center">Nuestros proyectos</h2>
         <p class="text-2xl lg:w-7/12 mt-3">
           Te presentamos las empresas que han confiado en nosotros y con quienes hemos establecido una relacion de valor
           nutriendonos de forma mutua y creciendo juntos.
         </p>
-        <div class="lg:max-h-screen w-full masonry__background p-9 shadow-md">
+        <div>
           <div
-            class="box-border max-w-full mx-auto md:masonry before:box-inherit after:box-inherit"
+            class="box-border max-w-full mx-auto md:masonry before:box-inherit after:box-inherit masonry__background shadow-md md:max-h-screen px-10 pt-10"
           >
             <div
               v-for="(project, i) in projects"
               :key="i"
-              class="my-6 break-inside"
+              class="mb-10 break-inside"
             >
               <img
                 :src="'https://api.tincalab.com' + project.image.url"
@@ -76,7 +76,7 @@
       <section
         class="flex flex-col justify-center items-center my-20 container__"
       >
-        <h2 class="title__h2">Lo que nuestros clientes piensan</h2>
+        <h2 class="title__h2 text-center">Lo que nuestros clientes piensan</h2>
         <p class="text-2xl mt-3">
           Esto es lo que nuestro clientes y quienes conocen nuestro trabajo piensan de nosotros.
         </p>
@@ -97,11 +97,11 @@
         <h2 class="title__h2">
           Blogs
         </h2>
-        <p class="text-2xl mt-3 text-center">Los blogs son un gran método para aumentar el tráfico y generar clientes
+        <p class="text-2xl mt-4 text-center">Los blogs son un gran método para aumentar el tráfico y generar clientes
           potenciales.
           Obtenga una ganancia. Reciba una compensación por sus esfuerzos.</p>
         <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 mt-3">
-          <div v-for="(blog, i) in blogs" :key="i" class="my-2">
+          <div v-for="(blog, i) in blogs" :key="i" class="m-3">
             <BlogCardComponent :blog="blog"/>
           </div>
         </div>
@@ -120,6 +120,7 @@
 <script>
 export default {
   name: 'IndexPage',
+  layout: 'default',
   data: () => ({
     loading: true,
   }),
@@ -162,35 +163,12 @@ export default {
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  color: tomato;
+  color: black;
 }
 
 .blog__button:hover {
   transform: scale(1.1);
   transition: all .2s ease-in-out;
-}
-
-.locale {
-  transition: all .2s ease-in-out;
-}
-
-.locale:hover {
-  transition: all .2s ease-in-out;
-  transform: scale(1.1);
-}
-
-.latam__locale {
-  background: url("~/static/latam-flag.svg") no-repeat center;
-  background-size: cover;
-  width: 30px;
-  height: 20px;
-}
-
-.english__locale {
-  background: url("~/static/english-flag.svg") no-repeat center;
-  background-size: cover;
-  width: 30px;
-  height: 20px;
 }
 
 .masonry__background {

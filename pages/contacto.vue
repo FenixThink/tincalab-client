@@ -6,7 +6,7 @@
           Contáctanos
         </h2>
       </section>
-      <div class="grid lg:grid-cols-2 w-full p-20 bg-contact t-regular">
+      <div class="grid lg:grid-cols-2 w-full p-20 bg-contact rounded-2xl t-regular">
         <div class="contact__info">
           <div class="contact__info-item flex items-center my-10">
             <div class="contact__info-icon shadow-sm border-2">
@@ -147,7 +147,6 @@ export default {
   background: linear-gradient(137.73deg, rgba(255, 255, 255, 0) 4.16%, rgba(255, 255, 255, 0.5) 102.02%);
   backdrop-filter: blur(84px);
   /* Note: backdrop-filter has minimal browser support */
-  border-radius: 0px 24px 24px 0px;
 }
 
 .contact__form-item-input {

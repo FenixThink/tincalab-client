@@ -1,7 +1,7 @@
 <template>
   <div class="default">
     <div class="flex flex-col h-screen wrap relative">
-      <header>
+      <header class="z-50">
         <NavbarComponent/>
       </header>
       <main class="flex-grow bg-white lg:pt-20 relative">
@@ -18,9 +18,9 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style scoped lang="css">
 main {
-  background-image: url('~/static/bg-elemtents.png');
+  background-image: url('~/static/bg-elemtents.png') !important;
   background-repeat: no-repeat;
   background-position: top;
   background-size: cover;

@@ -1,17 +1,17 @@
 <template>
-  <div class="flex grid sm:grid-cols-1 lg:grid-cols-2">
-    <div class="flex lg:justify-center">
-      <img width="300" :alt="feedback.name" :src="'https://api.tincalab.com'+feedback.image.url"
-           class="border-purple-500">
+  <div class="flex grid sm:grid-cols-2 lg:grid-cols-2">
+    <div class="flex md:justify-center lg:justify-center">
+      <img :alt="feedback.name" :src="'https://api.tincalab.com'+feedback.image.url"
+           class="border-purple-500 w-96">
     </div>
-    <div class="flex flex-col items-start">
+    <div class="flex flex-col md:items-center lg:items-start">
       <div class="quotes"/>
-      <section class="flex flex-col items-start justify-center">
+      <section class="w-full">
         <h2 class="text-5xl font-semibold title__h1">
           {{ feedback.name }}
         </h2>
         <article class="text-2xl font-light my-3 text-gray-500">
-          <p>
+          <p class="break-words w-4/5">
             {{ feedback.description }}
           </p>
         </article>

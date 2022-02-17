@@ -1,14 +1,16 @@
 <template>
-  <div class="card min-h-full shadow-md rounded-3xl px-10 lg:px-20  flex flex-col items-center justify-between lg:mx-5 m-2">
+  <div
+    class="card min-h-full shadow-md rounded-3xl px-5 md:px-10 lg:px-14  flex flex-col items-center justify-between lg:mx-5 m-2">
     <img class="w-1/3" :src="'https://api.tincalab.com'+service.image.url" :alt="service.name">
-    <h4 class="font-bold t-regular my-5">{{ service.name }}</h4>
+    <h4 class="font-bold t-regular my-5 text-center">{{ service.name }}</h4>
     <p class="t-regular">{{ service.description }}</p>
     <nuxt-link class="mt-5 mb-20 self-start text-blue-500 font-bold text-2xl" :to="'/blog/'+service.blog.hash"><span
       class="flex items-center">Leer mas<svg
       xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-right mx-2"
       viewBox="0 0 16 16">
-  <path fill-rule="evenodd"
-        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+  <path
+    fill-rule="evenodd"
+    d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
 </svg></span></nuxt-link>
   </div>
 </template>
