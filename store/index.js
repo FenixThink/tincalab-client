@@ -8,18 +8,18 @@ export const state = () => ({
 })
 
 export const actions = {
-  async getCustomers({commit, state}, _) {
+  async getCustomers({ commit, state }, _) {
     if (!state.customers.length) {
-      const {data} = await this.$axios.get('customers')
+      const { data } = await this.$axios.get('customers')
       commit('SET_LIST', {
         field: 'customers',
         data,
       })
     }
   },
-  async getBlogs({commit, state}, _) {
+  async getBlogs({ commit, state }, _) {
     if (!state.blogs.length) {
-      const {data} = await this.$axios.get('blogs')
+      const { data } = await this.$axios.get('blogs')
       commit('SET_LIST', {
         field: 'blogs',
         data,
@@ -27,18 +27,18 @@ export const actions = {
     }
   },
 
-  async getServices({commit, state}, _) {
+  async getServices({ commit, state }, _) {
     if (!state.services.length) {
-      const {data} = await this.$axios.get('services')
+      const { data } = await this.$axios.get('services')
       commit('SET_LIST', {
         field: 'services',
         data,
       })
     }
   },
-  async getMicroservices({commit, state}, _) {
+  async getMicroservices({ commit, state }, _) {
     if (!state.microservices.length) {
-      const {data} = await this.$axios.get('microservices')
+      const { data } = await this.$axios.get('microservices')
       commit('SET_LIST', {
         field: 'microservices',
         data,
@@ -46,18 +46,18 @@ export const actions = {
     }
   },
 
-  async getFeedbacks({commit, state}, _) {
+  async getFeedbacks({ commit, state }, _) {
     if (!state.feedbacks.length) {
-      const {data} = await this.$axios.get('feedbacks')
+      const { data } = await this.$axios.get('feedbacks')
       commit('SET_LIST', {
         field: 'feedbacks',
         data,
       })
     }
   },
-  async getProjects({commit, state}, _) {
+  async getProjects({ commit, state }, _) {
     if (!state.projects.length) {
-      const {data} = await this.$axios.get('projects')
+      const { data } = await this.$axios.get('projects')
       commit('SET_LIST', {
         field: 'projects',
         data,
@@ -67,7 +67,7 @@ export const actions = {
 }
 
 export const mutations = {
-  SET_LIST(state, {field, data}) {
+  SET_LIST(state, { field, data }) {
     state[field] = data
   },
 }

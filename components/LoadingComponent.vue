@@ -1,16 +1,17 @@
 <template>
   <client-only>
-    <ClipLoader :size="100"/>
+    <ClipLoader :size="100" />
   </client-only>
-</template>nu
+</template>
+nu
 
 <script>
-import {ClipLoader} from '@saeris/vue-spinners'
+import { ClipLoader } from '@saeris/vue-spinners'
 
 export default {
-  name: "LoadingComponent",
+  name: 'LoadingComponent',
   components: {
-    ClipLoader
+    ClipLoader,
   },
 }
 </script>

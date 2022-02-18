@@ -6,7 +6,7 @@
     <div
       class="lg:block sm:hidden md:hidden hidden desktop drop-shadow-md fixed w-full z-50"
     >
-      <div class="container__ py-5 bg-blur">
+      <div class="container__ bg-blur">
         <div class="navbar flex items-center justify-between">
           <div class="navbar__brand flex items-center">
             <nuxt-link to="/" class="mr-5">
@@ -25,13 +25,13 @@
             </nuxt-link>
           </div>
           <div class="navbar__menu">
-            <MenuComponentChild/>
+            <MenuComponentChild />
           </div>
         </div>
       </div>
     </div>
     <div class="lg:hidden mobile w-full drop-shadow-md z-50">
-      <div class="px-5 py-5 bg-white">
+      <div class="px-5 py-10 bg-white">
         <div class="navbar-brand flex justify-between">
           <nuxt-link to="/">
             <svg
@@ -50,9 +50,9 @@
           <button @click="toggle">
             <template v-if="opened">
               <svg
-                class="w-8 h-8"
+                class="w-12 h-12"
                 fill="currentColor"
-                style="color: #0084c1"
+                style="color: #5d90f6"
                 viewBox="0 0 20 20"
               >
                 <path
@@ -62,9 +62,9 @@
             </template>
             <template v-else>
               <svg
-                class="w-8 h-8"
+                class="w-12 h-12"
                 fill="currentColor"
-                style="color: #0084c1"
+                style="color: #5d90f6"
                 viewBox="0 0 20 20"
               >
                 <path
@@ -76,7 +76,10 @@
         </div>
       </div>
       <div v-show="opened" class="bg-white">
-        <MenuComponentChild :class="{ 'flex-col': true }" @change-state="toggle"/>
+        <MenuComponentChild
+          :class="{ 'flex-col': true }"
+          @change-state="toggle"
+        />
       </div>
     </div>
   </nav>
@@ -97,8 +100,7 @@ export default {
     computedHeight: '130px',
     opened: false,
   }),
-  mounted() {
-  },
+  mounted() {},
   methods: {
     toggle() {
       this.opened = !this.opened

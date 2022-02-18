@@ -1,23 +1,30 @@
 <template>
-  <div class="bg-white h-full rounded-3xl shadow-md flex flex-col items-start card p-10 md:m-2 lg:m-2">
+  <div
+    class="bg-white h-full rounded-3xl shadow-md flex flex-col items-start card p-10 md:m-2 lg:m-2"
+  >
     <section class="card__header">
-      <p class="card__header--type my-4" style="font-size: 1.55rem">
+      <p class="card__header--type mt-4" style="font-size: 1.55rem">
         {{ blog.type }}
       </p>
     </section>
     <section class="card__body">
-      <hr class="text-gray-300 bg-gray-300 my-1">
+      <hr class="text-gray-300 bg-gray-300 my-4" />
       <nuxt-link
-        :to="'/blog/' + blog.hash" class="title__h2 cursor-pointer"
-        style="font-size: 2rem !important;line-height: 15px !important;">
+        :to="'/blog/' + blog.hash"
+        class="title__h2 cursor-pointer"
+        style="font-size: 2rem !important; line-height: 15px !important"
+      >
         {{ blog.title }}
       </nuxt-link>
       <div class="flex my-5">
         <img
-          width="40" class="rounded-full" :src="'https://api.tincalab.com'+blog.author_image.url"
-          :alt="blog.author_name">
+          width="40"
+          class="rounded-full"
+          :src="'https://api.tincalab.com' + blog.author_image.url"
+          :alt="blog.author_name"
+        />
         <div class="mx-2">
-          <p class="flex-col ">
+          <p class="flex-col">
             {{ blog.author_name }}
           </p>
           <p>
@@ -30,32 +37,32 @@
 </template>
 
 <script>
-import moment from "moment";
-import 'moment/locale/es';
+import moment from 'moment'
+import 'moment/locale/es'
 
 export default {
-  name: "BlogCardComponent",
+  name: 'BlogCardComponent',
   props: {
     blog: {
       type: Object,
-      default: () => ({})
-    }
+      default: () => ({}),
+    },
   },
   methods: {
     formatDate(date) {
       return moment(String(date)).format('MMMM DD YYYY')
     },
-  }
+  },
 }
 </script>
 
 <style scoped>
 .card {
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .card:hover {
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   transform: scale(1.03);
 }
 

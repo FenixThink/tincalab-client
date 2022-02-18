@@ -137,4 +137,7 @@ p > a {
   color: #2283f1 !important;
 }
 
-
+.blog__content p > img {
+  width: 100%;
+  height: auto;
+}

@@ -1,27 +1,39 @@
 <template>
   <div>
+    <v-style>
+      .smooth-enter-to, .smooth-leave { height: {{ computedHeight }}; }
+    </v-style>
     <div v-if="loading" class="h-screen flex justify-center items-center">
-      <LoadingComponent/>
+      <LoadingComponent />
     </div>
     <div v-if="!loading">
       <div class="container__">
-        <section class="my-20">
+        <section class="mt-20">
           <h2 class="title__h2 text-center">Blogs</h2>
-          <p class="t-regular text-center mt-5">Blogs are a great method to increase traffic and generate leads. Make a
-            profit. Get
-            compensated for your efforts. </p>
+          <p class="t-regular text-center mt-5">
+            Blogs are a great method to increase traffic and generate leads.
+            Make a profit. Get compensated for your efforts.
+          </p>
         </section>
-        <div v-for="(blog,i) in featuredBlogs" :key="i" v-scroll-reveal.reset class="p-10">
-          <div class="relative grid sm:grid-cols-2 lg:grid-cols-2">
-            <div
-              class="backdrop flex justify-center items-center">
+        <div
+          v-for="(blog, i) in featuredBlogs"
+          :key="i"
+          v-scroll-reveal.reset
+          class="p-10"
+        >
+          <div
+            class="relative grid sm:grid-cols-2 lg:grid-cols-2 place-items-center"
+          >
+            <div class="backdrop flex justify-center items-center">
               <div
                 id="blog-image"
-                :style="getStyles(blog)" class="w-100 rounded-3 px-1 wide-images"/>
+                :style="getStyles(blog)"
+                class="w-100 rounded-3 px-1 wide-images"
+              />
             </div>
             <div>
               <section class="py-10 lg:py-20">
-                <nuxt-link :to="'/blog/'+blog.hash">
+                <nuxt-link :to="'/blog/' + blog.hash">
                   <h2 id="blog-title" class="title__h2 lg:w-9/12">
                     {{ blog.title }}
                   </h2>
@@ -29,10 +41,11 @@
                 <p class="t-regular text-justify lg:w-9/12 mt-8">
                   {{ blog.description }}
                 </p>
-                <div class="blog__button flex  items-center mt-10">
+                <div class="blog__button flex items-center mt-10">
                   <nuxt-link
                     class="blog__button--text text-2xl text-center text-white font-bold py-3 px-4 my-3"
-                    :to="/blog/+blog.hash">
+                    :to="/blog/ + blog.hash"
+                  >
                     <p class="m-0">Leer más</p>
                   </nuxt-link>
                 </div>
@@ -40,21 +53,57 @@
             </div>
           </div>
         </div>
+        <section class="grid grid-cols-1 md:grid-cols-3 mt-20">
+          <div v-for="(blog, i) in blogs.slice(0, 3)" :key="i" class="my-2">
+            <BlogCardComponent :blog="blog" />
+          </div>
+        </section>
+        <transition name="smooth">
+          <section v-if="showMore" class="grid grid-cols-1 md:grid-cols-3">
+            <div
+              v-for="(blog, i) in blogs.slice(3, blogs.length)"
+              :key="i"
+              class="my-2"
+            >
+              <BlogCardComponent :blog="blog" />
+            </div>
+          </section>
+        </transition>
+        <button
+          class="btn p-3 text-white font-bold text-2xl cursor-pointer block my-10 mx-auto"
+          @click="show"
+        >
+          <template v-if="!showMore"> Ver más </template>
+          <template v-else> Ver menos </template>
+        </button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import Vue from 'vue'
+
+Vue.component('VStyle', {
+  render(createElement) {
+    return createElement('style', this.$slots.default)
+  },
+})
+
 export default {
   name: 'IndexBlogPage',
   layout: 'slim',
   data: () => ({
     loading: true,
+    showMore: false,
+    computedHeight: '214px',
   }),
   computed: {
     featuredBlogs() {
-      return this.$store.state.blogs.filter(blog => blog.featured)
+      return this.$store.state.blogs.filter((blog) => blog.featured)
+    },
+    blogs() {
+      return this.$store.state.blogs.filter((blog) => !blog.featured)
     },
   },
   async mounted() {
@@ -62,6 +111,9 @@ export default {
     this.loading = false
   },
   methods: {
+    show() {
+      this.showMore = !this.showMore
+    },
     getImage(object) {
       return this.$axios.defaults.baseURL + object.banner?.url
     },
@@ -72,14 +124,34 @@ export default {
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
         backgroundPosition: 'center top',
-        borderRadius: '40px'
+        borderRadius: '40px',
       }
     },
-  }
+  },
 }
 </script>
 
 <style scoped>
+.smooth-enter-active,
+.smooth-leave-active {
+  transition: height 0.5s;
+}
+
+.smooth-enter,
+.smooth-leave-to {
+  height: 0;
+}
+
+.btn {
+  background: linear-gradient(112.77deg, #c381db 0%, #4e92f9 100%);
+  border-radius: 5px;
+  width: 150px;
+}
+
+.btn p {
+  line-height: 20px;
+}
+
 .backdrop {
   background: rgba(255, 255, 255, 0.45);
   backdrop-filter: blur(30px);
@@ -95,7 +167,7 @@ export default {
 .blog__button {
   background: url('~/static/blog__button.png') no-repeat left center;
   width: 200px;
-  transition: all .2s ease;
+  transition: all 0.2s ease;
 }
 
 .blog__button--text {
@@ -111,18 +183,18 @@ export default {
 
 .blog__button:hover {
   transform: scale(1.1);
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 @media screen and (max-width: 767px) {
   #blog-image {
-    width: 20rem;
-    height: 20rem;
+    width: 26rem;
+    height: 26rem;
   }
 
   .backdrop {
-    width: 25rem;
-    height: 25rem;
+    width: 30rem;
+    height: 30rem;
   }
 }
 
@@ -161,5 +233,4 @@ export default {
     height: 35rem;
   }
 }
-
 </style>

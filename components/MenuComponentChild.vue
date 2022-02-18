@@ -1,8 +1,8 @@
 <template>
-  <ul class="flex items-center">
-    <li class="mx-2 py-1">
+  <ul class="flex items-center py-10">
+    <li class="mx-2 py-1 my-1 md:my-0">
       <nuxt-link
-        class="route-link px-2 text-2xl"
+        class="route-link px-2 text-3xl"
         :exact="true"
         active-class="active"
         to="/"
@@ -11,9 +11,9 @@
         Inicio
       </nuxt-link>
     </li>
-    <li class="mx-2 py-1">
+    <li class="mx-2 py-1 my-1 md:my-0">
       <nuxt-link
-        class="route-link px-2 text-2xl"
+        class="route-link px-2 text-3xl"
         active-class="active"
         to="/servicios"
         @click.native="changeState"
@@ -21,9 +21,9 @@
         Servicios
       </nuxt-link>
     </li>
-    <li class="mx-2 py-1">
+    <li class="mx-2 py-1 my-1 md:my-0">
       <nuxt-link
-        class="route-link px-2 text-2xl"
+        class="route-link px-2 text-3xl"
         active-class="active"
         to="/blog"
         @click.native="changeState"
@@ -31,9 +31,9 @@
         Blog
       </nuxt-link>
     </li>
-    <li class="mx-2 py-1">
+    <li class="mx-2 py-1 my-1 md:my-0">
       <nuxt-link
-        class="route-link px-2 text-2xl"
+        class="route-link px-2 text-3xl"
         active-class="active"
         to="/contacto"
         @click.native="changeState"
@@ -45,7 +45,6 @@
 </template>
 
 <script>
-
 export default {
   name: 'MenuComponentChild',
   data: () => ({}),
@@ -59,7 +58,6 @@ export default {
 
 <style scoped>
 .active {
-  font-size: 1.5rem;
   font-weight: 800;
   background: -webkit-linear-gradient(
     93.35deg,

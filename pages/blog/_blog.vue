@@ -1,42 +1,49 @@
 <template>
   <div>
     <div v-if="loading" class="h-screen flex justify-center items-center">
-      <LoadingComponent/>
+      <LoadingComponent />
     </div>
     <div v-if="!loading">
-      <div class="container__ blog mx-auto p-10">
-        <div class="blog__header px-20 flex flex-col items-start justify-center">
+      <div class="container__ blog mx-auto mt-32">
+        <div class="blog__header px-5 flex flex-col items-start justify-center">
           <h1 class="title__h2 font-bold">{{ blog.title }}</h1>
-          <p class="text-2xl my-3">{{ formatDate(blog.date).toUpperCase() }}</p>
           <figure class="blog__banner self-center">
             <img
-              class="w-auto h-1/3 rounded-3xl p-3" :src="'https://api.tincalab.com'+blog.banner.url"
-              alt="Portada del blog"/>
+              class="w-auto rounded-3xl p-3 mt-10"
+              :src="'https://api.tincalab.com' + blog.banner.url"
+              alt="Portada del blog"
+            />
           </figure>
-          <div class="flex items-center">
+          <div class="flex items-center p-3">
             <img
-              width="50" class="rounded-full" :src="'https://api.tincalab.com'+blog.author_image.url"
-              :alt="blog.author_name">
+              width="50"
+              class="rounded-full"
+              :src="'https://api.tincalab.com' + blog.author_image.url"
+              :alt="blog.author_name"
+            />
             <p class="t-regular mx-3">{{ blog.author_name }}</p>
+            <p class="t-regular mx-3 text-right">{{ formatDate(blog.date) }}</p>
           </div>
         </div>
         <!-- eslint-disable vue/no-v-html -->
         <div
-          style="color: #323232" class="blog__content break-word w-auto my-10 px-20 mx-auto t-regular"
-          v-html="content">
-        </div>
+          style="color: #323232"
+          class="blog__content break-word w-auto my-10 pb-5 px-5 mx-auto t-regular"
+          v-html="content"
+        ></div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import moment from "moment";
-import 'moment/locale/es';
-import {marked} from 'marked';
+import moment from 'moment'
+import 'moment/locale/es'
+import { marked } from 'marked'
 
 export default {
   name: 'BlogPage',
+  layout: 'slim',
   data: () => ({
     blog: {},
     loading: true,
@@ -44,8 +51,8 @@ export default {
   }),
   computed: {
     content() {
-      return marked(this.blog.content);
-    }
+      return marked(this.blog.content)
+    },
   },
   async mounted() {
     await this.$store.dispatch('getBlogs')
@@ -63,12 +70,24 @@ export default {
     formatDate(date) {
       return moment(String(date)).format('MMMM DD YYYY')
     },
-  }
+    getImage(object) {
+      return this.$axios.defaults.baseURL + object.banner?.url
+    },
+    getStyles(object) {
+      return {
+        backgroundColor: 'rgba(255,255,255,0.84)',
+        backgroundImage: `url(${this.getImage(object)})`,
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center top',
+        borderRadius: '40px',
+      }
+    },
+  },
 }
 </script>
 
 <style scoped>
-
 .break-word {
   -ms-word-break: break-all;
   word-break: break-all;
@@ -84,5 +103,22 @@ export default {
   font-weight: 600;
   color: #323232 !important;
   line-height: 50px;
+}
+
+@media (min-width: 1200px) {
+  .blog__banner img {
+    height: 625px !important;
+    width: 100vw !important;
+  }
+}
+
+.blog .blog__content {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.blog__content p {
+  display: flex !important;
+  justify-content: center;
 }
 </style>

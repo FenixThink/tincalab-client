@@ -4,28 +4,52 @@
       <div class="flex justify-center sm:mt-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 flex items-center w-full">
           <div class="footer__links">
-            <nuxt-link class="text-2xl text-indigo-100 mx-3 font-semibold" to="/">
+            <nuxt-link
+              class="text-2xl text-indigo-100 mx-3 font-semibold"
+              to="/"
+            >
               Inicio
             </nuxt-link>
-            <nuxt-link class="text-2xl text-indigo-100 mx-3 font-semibold" to="/servicios">
+            <nuxt-link
+              class="text-2xl text-indigo-100 mx-3 font-semibold"
+              to="/servicios"
+            >
               Servicios
             </nuxt-link>
-            <nuxt-link class="text-2xl text-indigo-100 mx-3 font-semibold" to="/contacto">
+            <nuxt-link
+              class="text-2xl text-indigo-100 mx-3 font-semibold"
+              to="/contacto"
+            >
               Contacto
             </nuxt-link>
-            <nuxt-link class="text-2xl text-indigo-100 mx-3 font-semibold" to="/blog">
+            <nuxt-link
+              class="text-2xl text-indigo-100 mx-3 font-semibold"
+              to="/blog"
+            >
               Blog
             </nuxt-link>
           </div>
           <div class="footer__follow-us flex lg:justify-end items-center">
-            <a class="mx-2" target="_blank" href="https://facebook.com/tinca-lab">
-              <img src="/facebook.svg" alt="Facebook">
+            <a
+              class="mx-2"
+              target="_blank"
+              href="https://facebook.com/tinca-lab"
+            >
+              <img src="/facebook.svg" alt="Facebook" />
             </a>
-            <a class="mx-2" target="_blank" href="https://instagram.com/tincalab.col">
-              <img src="/instagram.svg" alt="Instagram">
+            <a
+              class="mx-2"
+              target="_blank"
+              href="https://instagram.com/tincalab.col"
+            >
+              <img src="/instagram.svg" alt="Instagram" />
             </a>
-            <a class="mx-2" target="_blank" href="https://facebook.com/tinca-lab">
-              <img src="/in.svg" alt="LinkedIN">
+            <a
+              class="mx-2"
+              target="_blank"
+              href="https://www.linkedin.com/company/tinca-lab/about/"
+            >
+              <img src="/in.svg" alt="LinkedIN" />
             </a>
           </div>
         </div>
@@ -35,9 +59,7 @@
       <div class="mt-16 border-t-2 border-gray-300 flex flex-col items-center">
         <div class="sm:w-2/3 text-center py-6 flex justify-center items-center">
           <p class="font-light mr-1">Todos los derechos reservados</p>
-          <p class="text-sm ml-1 text-blue-400 font-bold">
-            © Tinca lab, 2022
-          </p>
+          <p class="text-sm ml-1 text-blue-400 font-bold">© Tinca lab, 2022</p>
         </div>
       </div>
     </div>
@@ -52,8 +74,7 @@ export default {
 
 <style scoped>
 .footer {
-  background: rgba(237, 237, 237, 0.4);
-  backdrop-filter: blur(114px);
+  background: #ffffff;
 }
 
 span {
