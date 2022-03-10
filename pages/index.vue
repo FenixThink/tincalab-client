@@ -7,13 +7,13 @@
       <section>
         <div class="grid grid-cols-1 relative">
           <figure
-            class="relative z-auto lg:hidden flex flex-col items-center justify-center"
+            class=" top-0 relative z-auto lg:hidden flex flex-col items-center justify-center"
           >
             <picture class="media absolute w-full" />
             <picture class="media__background" />
           </figure>
           <section
-            class="container__ flex items-center grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 mt-20"
+            class="container__ flex items-center grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 mt-0"
           >
             <article class="relative">
               <h1 class="title__h1">Lleva tu empresa</h1>
@@ -195,12 +195,12 @@ export default {
 
 @media screen and (max-width: 640px) {
   .media__background {
-    background-image: url('/media-background.png');
+    background-image: url('/media.svg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     width: 100%;
-    height: 600px;
+    height: 500px;
   }
 
   .media {
