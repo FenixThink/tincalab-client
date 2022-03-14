@@ -4,7 +4,7 @@
       <LoadingComponent />
     </div>
     <div v-if="!loading">
-      <div class="container__ blog mx-auto mt-32">
+      <div class="container__ blog mx-auto my-32">
         <div class="blog__header px-5 flex flex-col items-start justify-center">
           <h1 class="title__h2 font-bold">{{ blog.title }}</h1>
           <figure class="blog__banner self-center">
@@ -28,7 +28,7 @@
         <!-- eslint-disable vue/no-v-html -->
         <div
           style="color: #323232"
-          class="blog__content break-word w-auto my-10 pb-5 px-5 mx-auto t-regular"
+          class="blog__content break-word w-auto mt-10 px-5 mx-auto t-regular"
           v-html="content"
         ></div>
       </div>
@@ -39,7 +39,7 @@
 <script>
 import moment from 'moment'
 import 'moment/locale/es'
-import { marked } from 'marked'
+import {marked} from 'marked'
 
 export default {
   name: 'BlogPage',
@@ -98,13 +98,6 @@ export default {
   hyphens: auto;
 }
 
-.title__h2 {
-  font-size: 4.5rem !important;
-  font-weight: 600;
-  color: #323232 !important;
-  line-height: 50px;
-}
-
 @media (min-width: 1200px) {
   .blog__banner img {
     height: 625px !important;
@@ -121,4 +114,5 @@ export default {
   display: flex !important;
   justify-content: center;
 }
+
 </style>

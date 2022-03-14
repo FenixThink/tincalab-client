@@ -1,12 +1,11 @@
 <template>
   <div class="contact">
-    <div class="container__ flex flex-col justify-center items-start lg:py-28">
+    <div class="container__ flex flex-col lg:px-28 py-32">
       <section>
-        <h2 class="title__h2 my-20">Contáctanos</h2>
+        <h2 class="title__h2 mb-20">Contáctanos</h2>
       </section>
       <div
-        class="grid lg:grid-cols-2 w-full p-20 bg-contact rounded-2xl t-regular"
-      >
+        class="grid flex items-center justify-center lg:grid-cols-2 min-w-full p-10 lg:p-20 bg-contact rounded-2xl t-regular">
         <div class="contact__info">
           <div class="contact__info-item flex items-center my-10">
             <div class="contact__info-icon shadow-sm border-2">
@@ -81,11 +80,11 @@
         </div>
         <div class="contact__form">
           <form @submit.prevent="submit">
-            <div class="contact__form-item w-full mt-10 mb-5">
+            <div class="contact__form-item mt-10 mb-5">
               <input
                 v-model="user.name"
                 type="text"
-                class="contact__form-item-input rounded-2xl p-4 shadow-sm w-full"
+                class="contact__form-item-input rounded-2xl p-4 shadow-sm w-9/12 md:w-full"
                 placeholder="Escribe tu nombre"
                 required
               />
@@ -94,7 +93,7 @@
               <input
                 v-model="user.email"
                 type="email"
-                class="contact__form-item-input rounded-2xl p-4 shadow-sm w-full"
+                class="contact__form-item-input rounded-2xl p-4 shadow-sm w-9/12 md:w-full"
                 placeholder="Escribe tu correo"
                 required
               />
@@ -102,7 +101,7 @@
             <div class="contact__form-item w-full my-5">
               <textarea
                 v-model="user.message"
-                class="contact__form-item-input rounded-2xl p-4 shadow-sm w-full"
+                class="contact__form-item-input rounded-2xl p-4 shadow-sm w-9/12 md:w-full"
                 placeholder="Escribe tu mensaje"
                 required
               ></textarea>
@@ -181,7 +180,7 @@ export default {
 .contact {
   background: url('~/static/bg-contact.png') no-repeat center;
   background-size: cover;
-  height: 100vh;
+  height: 100%;
 }
 
 .bg-contact {

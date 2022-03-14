@@ -26,7 +26,7 @@
               <ButtonComponent route="/contacto"> Contáctanos </ButtonComponent>
             </article>
             <figure
-              class="hidden sm:hidden md:hidden lg:flex relative flex-col items-center justify-center"
+              class="hidden sm:hidden md:hidden lg:flex relative flex-col items-center justify-center lg:pt-32"
             >
               <picture class="media bounce-1 absolute w-full" />
               <picture class="media__background" />
@@ -57,14 +57,14 @@
         class="flex flex-col justify-center items-center mt-20 container__"
       >
         <h2 class="title__h2 text-black text-center">Nuestros proyectos</h2>
-        <p class="text-2xl lg:w-7/12 mt-3">
+        <p class="text-2xl lg:w-7/12 my-5">
           Te presentamos las empresas que han confiado en nosotros y con quienes
           hemos establecido una relacion de valor nutriendonos de forma mutua y
           creciendo juntos.
         </p>
         <div>
           <div
-            class="box-border max-w-full mx-auto md:masonry before:box-inherit after:box-inherit masonry__background shadow-md md:max-h-screen px-10 pb-5 md:pb-0 pt-10"
+            class="md:masonry-2-col lg:masonry-3-col box-border rounded-lg mx-auto before:box-inherit after:box-inherit shadow-md px-10 pb-5 md:pb-0 pt-10"
           >
             <div
               v-for="(project, i) in projects"
@@ -105,7 +105,7 @@
           </client-only>
         </div>
       </section>
-      <section class="flex flex-col items-center container__ mb-10">
+      <section class="flex flex-col items-center container__ mb-32">
         <h2 class="title__h2">Blogs</h2>
         <p class="text-2xl mt-4 text-center">
           Los blogs son un gran método para aumentar el tráfico y generar
@@ -114,7 +114,7 @@
         </p>
         <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 mt-3">
           <div v-for="(blog, i) in blogs" :key="i" class="m-3">
-            <BlogCardComponent :blog="blog" />
+            <BlogCardComponent :blog="blog"/>
           </div>
         </div>
         <div class="blog__button flex justify-center items-center mt-10">

@@ -4,8 +4,8 @@
       <header class="z-50">
         <NavbarComponent />
       </header>
-      <main class="flex-grow bg-white lg:pt-20 relative">
-        <Nuxt class="relative" />
+      <main class="flex-grow bg-white lg:pt-32 relative">
+        <Nuxt class="relative"/>
       </main>
       <FooterComponent class="z-50" />
     </div>

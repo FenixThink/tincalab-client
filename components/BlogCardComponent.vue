@@ -7,8 +7,8 @@
         {{ blog.type }}
       </p>
     </section>
-    <section class="card__body">
-      <hr class="text-gray-300 bg-gray-300 my-4" />
+    <section class="card__body w-full">
+      <hr class="text-gray-300 bg-gray-300 my-4 w-full" />
       <nuxt-link
         :to="'/blog/' + blog.hash"
         class="title__h2 cursor-pointer"

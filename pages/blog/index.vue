@@ -53,7 +53,7 @@
             </div>
           </div>
         </div>
-        <section class="grid grid-cols-1 md:grid-cols-3 mt-20">
+        <section class="grid grid-cols-1 md:grid-cols-3 mt-20 mb-32">
           <div v-for="(blog, i) in blogs.slice(0, 3)" :key="i" class="my-2">
             <BlogCardComponent :blog="blog" />
           </div>
@@ -70,7 +70,8 @@
           </section>
         </transition>
         <button
-          class="btn p-3 text-white font-bold text-2xl cursor-pointer block my-10 mx-auto"
+          v-if="blogs.length > 3"
+          class="btn p-3 lg:mb-32 text-white font-bold text-2xl cursor-pointer block my-10 mx-auto"
           @click="show"
         >
           <template v-if="!showMore"> Ver más </template>

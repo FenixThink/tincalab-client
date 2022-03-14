@@ -27,7 +27,7 @@
           y explotar las cualidades de tu empresa.
         </p>
       </section>
-      <section class="my-20">
+      <section class="mt-20 mb-32">
         <div class="grid lg:grid-cols-3">
           <div
             v-for="(microservice, i) in microservices"
