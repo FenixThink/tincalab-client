@@ -1,18 +1,14 @@
 <template>
   <div>
     <div v-if="loading" class="h-screen flex justify-center items-center">
-      <LoadingComponent />
+      <LoadingComponent/>
     </div>
     <div v-if="!loading">
       <div class="container__ blog mx-auto my-32">
         <div class="blog__header px-5 flex flex-col items-start justify-center">
           <h1 class="title__h2 font-bold">{{ blog.title }}</h1>
           <figure class="blog__banner self-center">
-            <img
-              class="w-auto rounded-3xl p-3 mt-10"
-              :src="'https://api.tincalab.com' + blog.banner.url"
-              alt="Portada del blog"
-            />
+            <div :style="getStyles(blog)"/>
           </figure>
           <div class="flex items-center p-3">
             <img
@@ -79,8 +75,10 @@ export default {
         backgroundImage: `url(${this.getImage(object)})`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
-        backgroundPosition: 'center top',
-        borderRadius: '40px',
+        backgroundPosition: 'center',
+        borderRadius: '5px',
+        width: '100%',
+        height: '400px'
       }
     },
   },
@@ -98,10 +96,15 @@ export default {
   hyphens: auto;
 }
 
+.blog__banner {
+  width: 100%;
+  margin: 10px 0;
+}
+
 @media (min-width: 1200px) {
   .blog__banner img {
-    height: 625px !important;
-    width: 100vw !important;
+    height: auto !important;
+    width: 100% !important;
   }
 }
 
