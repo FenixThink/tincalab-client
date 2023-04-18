@@ -51,8 +51,8 @@
             </div>
             <div class="flex flex-col mx-2">
               <h3 class="contact__info-item-title font-bold">Teléfono</h3>
-              <a href="tel:+57 302 7142819" class="contact__info-item-text">
-                +57 302 7142819
+              <a href="tel:+57 318 3833234" class="contact__info-item-text">
+                +57 318 3833234
               </a>
             </div>
           </div>
